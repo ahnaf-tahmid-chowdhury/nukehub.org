@@ -168,16 +168,6 @@ const sr = ScrollReveal({
   delay: 0,
   reset: false,
 });
-if (window.innerWidth > 768) {
-  sr.reveal(`.nav_item, .change-theme`, {
-    interval: 100,
-    distance: "20px",
-  });
-}
-sr.reveal(`.nav_logo`, {
-  origin: "left",
-  interval: 50,
-});
 sr.reveal(`.section_title, .section_subtitle`, {
   interval: 50,
 });
@@ -197,10 +187,7 @@ sr.reveal(`.home_social-icon`, {
   interval: 200,
   distance: "100px",
 });
-sr.reveal(`.home_scroll`, {
-  delay: 2000,
-});
-sr.reveal(`.about_img`, {
+sr.reveal(`.box_content`, {
   origin: "left",
   delay: 100,
 });
@@ -217,49 +204,12 @@ sr.reveal(`.join_content,.join_button`, {
   origin: "right",
 });
 sr.reveal(
-  `.footer_bg,.footer_title,.footer_subtitle,.footer_copy`,
+  `.footer_bg,.footer_title,.footer_subtitle,.footer_copy,footer_link_title,.footer_links`,
   {
     interval: 50,
   }
 );
-/*TODO  Context Menu */
-$(function () {
-  $.contextMenu({
-    selector: "main",
-    callback: function (key, options) {
-      var m = "clicked: " + key;
-    },
-    animation: {
-      duration: 200,
-      show: "fadeIn",
-      hide: "fadeOut",
-    },
-    zIndex: 10000,
-    items: {
-      firstCommand: {
-        name: "<i class='uil uil-estate context_menu-icon'></i> Home",
-        isHtmlName: true,
-        callback: function (key, opt) {
-          window.location.href = "#home";
-        },
-      },
-      secondCommand: {
-        name: "<i class='uil uil-file-alt context_menu-icon'></i> Projects",
-        isHtmlName: true,
-        callback: function (key, opt) {
-          window.location.href = "#projects";
-        },
-      },
-      thirdCommand: {
-        name: "<i class='uil uil-comment-plus context_menu-icon'></i> join",
-        isHtmlName: true,
-        callback: function (key, opt) {
-          window.location.href = "#join";
-        },
-      },
-    },
-  });
-});
+
 /*TODO  Notification */
 let globalOptions = {
   position: "top-right",
